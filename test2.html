@@ -1,0 +1,45 @@
+
+<!--导航栏-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Logo</title>
+    <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        .navbar img {
+            height: 50px; /* 调整图像高度 */
+            margin-right: 20px; /* 图像右边距 */
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar li {
+            margin-right: 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="gpt.png" alt="Logo">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</body>
+</html>
