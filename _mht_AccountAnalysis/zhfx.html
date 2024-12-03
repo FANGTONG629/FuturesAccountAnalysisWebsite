@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账户分析</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #0044cc;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .navbar .left {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .left a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            padding: 5px 10px;
+            background-color: #0055dd;
+            border: none;
+            border-radius: 5px;
+        }
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .chart {
+            margin: 20px;
+            width: 45%;
+        }
+        .chart canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+        .scrollable-container {
+            width: 45%;
+            height: 350px;
+            border: 1px solid #ccc;
+            overflow-y: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <a href="#">账户分析</a>
+            <a href="#">交易统计</a>
+            <a href="#">平仓记录</a>
+            <a href="#">期末持仓</a>
+            <a href="#">成交记录</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="scrollable-container">
+            <h3>资金信息</h3>
+            <p>期初权益: <span style="color:red;">12570797.29</span></p>
+            <p>-手续费: <span style="color:red;">1433.13</span></p>
+            <p>+盯市盈亏（含浮盈）: <span style="color:red;">41410.00</span></p>
+            <p>+权利金: <span style="color:red;">-32013.00</span></p>
+            <p>+出入金: <span style="color:red;">0.00</span></p>
+            <p>=期末权益: <span style="color:red;">12578761.16</span></p>
+            <p>-持仓保证金: <span style="color:red;">150150.00</span></p>
+            <p>-冻结资金: <span style="color:red;">0.00</span></p>
+            <p>=可用资金: <span style="color:red;">12428611.16</span></p>
+            <p>盯市收益: <span style="color:red;">7963.87</span></p>
+        </div>
+        <div class="scrollable-container">
+            <h3>统计信息</h3>
+            <p>胜率: <span style="color:red;">37.18%</span></p>
+            <p>盈利率: <span style="color:red;">0.49%</span></p>
+            <p>最大回撤: <span style="color:red;">120907.77</span></p>
+            <p>最大收益率: <span style="color:red;">0.77%</span></p>
+            <p>最大风险度: <span style="color:red;">1.99%</span></p>
+            <p>最长持仓时间: <span style="color:red;">6天</span></p>
+            <p>最短持仓时间： <span style="color:red;">0天</span></p>
+            <p>平均持仓时间: <span style="color:red;">1天</span></p>
+            <p>每笔平均盈利: <span style="color:red;">32850.71</span></p>
+            <p>每笔平均亏损: <span style="color:red;">-421.00</span></p>
+            <p>每笔平均净盈亏: <span style="color:red;">2429.71</span></p>
+            <p>每笔平均盈亏比: <span style="color:red;">6.77</span></p>
+        </div>
+        <div class="chart">
+            <canvas id="radarChart"></canvas>
+        </div>
+        <div class="chart">
+            <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctxRadar = document.getElementById('radarChart').getContext('2d');
+        const radarChart = new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: ['盈利能力(0)', '稳定性(40)', '胜率(37.17948717948718)', '市场感知(80)', '风向控制(99.66199999999999)'],
+                datasets: [{
+                    label: '账户评级',
+                    data: [0, 40, 37.17948717948718, 80, 99.66199999999999],
+                    backgroundColor: 'rgba(255, 218, 39, 0.7)',
+                    borderColor: 'rgba(219, 146, 7, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scale: {
+                    ticks: {
+                        beginAtZero: true
+                    },
+                    responsive: true, // 使图表响应式
+        maintainAspectRatio: false // 不保持宽高比
+                }
+            }
+        });
+
+        const ctxLine = document.getElementById('lineChart').getContext('2d');
+        const lineChart = new Chart(ctxLine, {
+            type: 'line', // 主图表类型为折线图
+            data: {
+                labels: ['20231018', '20231019'],
+                datasets: [{
+                    label: '权益',
+                    data: [1264, 1278],
+                    borderColor: 'blue',
+                    fill: false,
+                    yAxisID: 'y-axis-1'
+                }, {
+                    label: '资金使用率',
+                    data: [10, 70],
+                    type: 'bar', // 指定为柱状图
+                    borderColor: 'red',
+                    backgroundColor: 'rgba(255, 218, 39, 1)',
+                    fill: false,
+                    yAxisID: 'y-axis-2'
+                }]
+            },
+            options: {
+                responsive: true,
+        maintainAspectRatio: false,
+        canvas: {
+            width: 400, 
+            height: 300 
+        },
+                scales: {
+                    yAxes: [{
+                        id: 'y-axis-1',
+                        type: 'linear',
+                        position: 'left',
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }, {
+                        id: 'y-axis-2',
+                        type: 'linear',
+                        position: 'right',
+                        ticks: {
+                            beginAtZero: false,
+                        },
+                        responsive: true, // 使图表响应式
+        maintainAspectRatio: false // 不保持宽高比
+                    }]
+                }
+                
+            }
+        });
+    </script>
+</body>
+</html>
