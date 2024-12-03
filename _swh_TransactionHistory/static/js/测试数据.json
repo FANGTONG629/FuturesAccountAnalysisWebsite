@@ -1,0 +1,502 @@
+{
+    "BillAnalysis": {
+        "SetContent": {
+            "Total": [
+                {
+                    "MoneyInfoCalItem": [
+                        {
+                            "Item": "胜率"
+                        },
+                        {
+                            "Item": "盈利率"
+                        },
+                        {
+                            "Item": "最大回撤"
+                        },
+                        {
+                            "Item": "最大收益率"
+                        },
+                        {
+                            "Item": "最大风险度"
+                        },
+                        {
+                            "Item": "最长持仓时间",
+                            "list": [
+                                "<b>合约 </b>",
+                                "<b>开仓时间 </b>",
+                                "<b>持仓时间 </b>"
+                            ]
+                        },
+                        {
+                            "Item": "最短持仓时间",
+                            "list": [
+                                "<b>合约 </b>",
+                                "<b>开仓时间 </b>",
+                                "<b>持仓时间 </b>"
+                            ]
+                        },
+                        {
+                            "Item": "平均持仓时间"
+                        },
+                        {
+                            "Item": "每笔平均盈利"
+                        },
+                        {
+                            "Item": "每笔平均亏损"
+                        },
+                        {
+                            "Item": "每笔平均净盈亏"
+                        },
+                        {
+                            "Item": "每笔平均盈亏比"
+                        }
+                    ],
+                    "MoneyItem": [
+                        {
+                            "Item": "  期初权益"
+                        },
+                        {
+                            "Item": "<span style='display: inline-block;width: 7px;'>-</span> 手续费"
+                        },
+                        {
+                            "Item": "+ 盯市盈亏(含浮盈)"
+                        },
+                        {
+                            "Item": "+ 权利金"
+                        },
+                        {
+                            "Item": "+ 出入金"
+                        },
+                        {
+                            "Item": "= 期末权益"
+                        },
+                        {
+                            "Item": "<span style='display: inline-block;width: 7px;'>-</span> 持仓保证金"
+                        },
+                        {
+                            "Item": "<span style='display: inline-block;width: 7px;'>-</span> 冻结资金"
+                        },
+                        {
+                            "Item": "= 可用资金"
+                        },
+                        {
+                            "Item": "  盯市收益"
+                        }
+                    ],
+                    "UserType": 0
+                }
+            ]
+        },
+        "SetUser": {     
+            "CulUserType": 0,
+            "Total": [
+                {
+                    "Info": [
+                        {
+                            "ShowUserName": "00000jyz003(文华模拟)",
+                            "UserName": "jyz003"              
+                        }
+                    ],
+                    "UserType": 0
+                }
+            ]
+        }
+    },
+    "Users": [
+        {
+            "Info": [
+                {
+                    "Data": {
+                        "CFUser": {
+                            "ClientEquity": {
+                                "Total": [
+                                    {
+                                        "ClientEquity": "12596006.93",
+                                        "MarketValue": "12596056.93",
+                                        "RiskDegree": "0.0000",
+                                        "date": "20231018"
+                                    }
+                                ]
+                            },
+                            "IndexProgress": {
+                                "IndexProgress": 0.03123757667652254,
+                                "ProfitRateProgress": 0.5 
+                            },
+                            "MatchRecord": {
+                                "Total": [
+                                    {
+                                        "Array": [{
+                                            "BidAsk": "买",
+                                            "Contract": "沪银2312",
+                                            "Currency": "",
+                                            "ExchangeNo": "上海",
+                                            "Fee": "4.39",
+                                            "Hedge": "投",
+                                            "MTMPL": "-2085.00",
+                                            "Name": "jyz003",
+                                            "Offset": "平",
+                                            "PremiumIO": ".00",
+                                            "Price": "5849.000",
+                                            "Turnover": "87735.00",
+                                            "Vol": "1"
+                                        }],
+                                        "Name": "jyz003",
+                                        "SubTotal": {
+                                            "Currency": "",
+                                            "Fee": 530.36,
+                                            "MTMPL": 67275,
+                                            "Num": 26,
+                                            "PremiumIO": 3280,
+                                            "Turnover": 8219020,
+                                            "Vol": 38
+                                        },
+                                        "date": "20231018"
+                                    }
+                                ]
+                            },
+                            "Money": {
+                                "Total": [
+                                    [
+                                        {
+                                            "Item": "12570797.29"
+                                        },
+                                        {
+                                            "Item": "1433.13"
+                                        },
+                                        {
+                                            "Item": "41410.00"
+                                        },
+                                        {
+                                            "Item": "-32013.00"
+                                        },
+                                        {
+                                            "Item": "0.00"
+                                        },
+                                        {
+                                            "Item": "12578761.16"
+                                        },
+                                        {
+                                            "Item": "150150.00"
+                                        },
+                                        {
+                                            "Item": "0.00"
+                                        },
+                                        {
+                                            "Item": "12428611.16"
+                                        },
+                                        {
+                                            "Item": "7963.87"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "MoneyInfoCal": {
+                                "Total": [
+                                    {
+                                        "Item": "37.18%"
+                                    },
+                                    {
+                                        "Item": "0.49%"
+                                    },
+                                    {
+                                        "Item": "120907.77"
+                                    },
+                                    {
+                                        "Item": "0.77%"
+                                    },
+                                    {
+                                        "Item": "1.99%"
+                                    },
+                                    {
+                                        "Item": "6天",
+                                        "list": [
+                                            "沪银2312",
+                                            "20231012",
+                                            "20231018"
+                                        ]
+                                    },
+                                    {
+                                        "Item": "0天",
+                                        "list": [
+                                            "PTA401C5500",
+                                            "20231023",
+                                            "20231023"
+                                        ]
+                                    },
+                                    {
+                                        "Item": "1天"
+                                    },
+                                    {
+                                        "Item": "2850.71"
+                                    },
+                                    {
+                                        "Item": "-421.00"
+                                    },
+                                    {
+                                        "Item": "2429.71"
+                                    },
+                                    {
+                                        "Item": "6.77"
+                                    }
+                                ]
+                            },
+                            "NetGrowthRate": {
+                                "Total": [
+                                    {
+                                        "NetRate": "1.0020",
+                                        "date": "20231018"
+                                    }
+                                ]
+                            },
+                            "OffsetRecord": {
+                                "Total": [
+                                    {
+                                        "Array": [{
+                                            "AccumPL": "2940.00",
+                                            "BidAsk": "卖",
+                                            "Contract": "沪银2312",
+                                            "Currency": "",
+                                            "ExchangeNo": "上海",
+                                            "Fee": "4.40",
+                                            "Hedge": "投",
+                                            "MTMPL": "870.00",
+                                            "MatchPrice": "5865.000",
+                                            "Name": "jyz003",
+                                            "OpenDate": "20231012",
+                                            "OpenPrice": "5669.000",
+                                            "PremiumIO": ".00",
+                                            "Vol": "1"
+                                        }],
+                                        "Name": "jyz003",
+                                        "SubTotal": {
+                                            "AccumPL": 65990,
+                                            "Currency": "",
+                                            "Fee": 412.28,
+                                            "MTMPL": 22460,
+                                            "Num": 23,
+                                            "PremiumIO": -1285,
+                                            "Vol": 26
+                                        },
+                                        "date": "20231018"
+                                    }
+                                ]
+                            },
+                            "PositionRecord": {
+                                "Total": [
+                                    {
+                                        "Array": [
+                                            {
+                                                "BidAsk": "买",
+                                                "Contract": "工业硅2312-C-16000",
+                                                "ContractName": "",
+                                                "Currency": "",
+                                                "ExchangeNo": "广州",
+                                                "Hedge": "投",
+                                                "MTMPL": ".00",
+                                                "Margin": ".00",
+                                                "MarketValue": 10,
+                                                "MergeNum": 0,
+                                                "Name": "jyz003",
+                                                "OpenDate": "20231018",
+                                                "PL": ".00",
+                                                "Price": "10.000",
+                                                "Vol": "1"
+                                            }
+                                        ],
+                                        "Name": "jyz003",
+                                        "SubTotal": {
+                                            "Currency": "",
+                                            "MTMPL": 0,
+                                            "Margin": 0,
+                                            "MarketValue": 10,
+                                            "Num": 1,
+                                            "PL": 0,
+                                            "Vol": 1
+                                        },
+                                        "date": "20231018"
+                                    }
+                                ]
+                            },
+                            "ProfitAndLoss": {
+                                "Total": [
+                                    {
+                                        "PL": "25209.64",
+                                        "TotalPL": 25209.64,
+                                        "date": "20231018"
+                                    }
+                                ]
+                            },
+                            "ProfitRate": {
+                                "Total": [
+                                    {
+                                        "Index": 0,
+                                        "MaxPrincipalProfitRate": "0.0020",
+                                        "ProfitRate": "0.0020",
+                                        "TotalProfitRate": "0.0020",
+                                        "date": "20231018"
+                                    }
+                                ]
+                            },
+                            "ProfitRateProgress": {
+                                "ProfitRateProgress": 0
+                            },
+                            "Rating": {
+                                "Value0": 0,
+                                "Value1": 40,
+                                "Value2": 37.17948717948718,
+                                "Value3": 80,
+                                "Value4": 99.66199999999999
+                            },
+                            "StaticsInfo": {
+                                "SubTotal": {
+                                    "AVGPLPerCount": 795.4038461538462,
+                                    "AVGPLPerNum": 705.0170454545455,
+                                    "Currency": "",
+                                    "LossNum": 49,
+                                    "MaxLoss": -5400,
+                                    "MaxWin": 74200,
+                                    "PL": 62041.5,
+                                    "TradeNum": 78,
+                                    "Vol": 88,
+                                    "WinNum": 29
+                                },
+                                "Total": [
+                                    {
+                                        "AVGPLPerCount": 34400,
+                                        "AVGPLPerNum": 17200,
+                                        "BS": "多",
+                                        "ContractArray": [
+                                            {
+                                                "AVGPLPerCount": 34400,
+                                                "AVGPLPerNum": 17200,
+                                                "BS": "多",
+                                                "Contract": "原油2311",
+                                                "Currency": "",
+                                                "ExchangeNo": "能源",
+                                                "LossNum": 1,
+                                                "MaxLoss": -5400,
+                                                "MaxWin": 74200,
+                                                "PL": 68800,
+                                                "TradeNum": 2,
+                                                "Vol": 4,
+                                                "WinNum": 1
+                                            }
+                                        ],
+                                        "ContractName": "",
+                                        "Currency": "",
+                                        "ExchangeNo": "能源",
+                                        "LossNum": 1,
+                                        "MaxLoss": -5400,
+                                        "MaxWin": 74200,
+                                        "PL": 68800,
+                                        "TradeNum": 2,
+                                        "Varity": "原油",
+                                        "Vol": 4,
+                                        "WinNum": 1
+                                    }
+                                ]
+                            },
+                            "TopInfo": {
+                                "Total": [
+                                    {
+                                        "Info": [{
+                                            "CloseDate": "20231018",
+                                            "ClosePrice": "690.300",
+                                            "Contract": "原油2311",
+                                            "ContractName": "",
+                                            "Currency": "",
+                                            "ExchangeNo": "能源",
+                                            "MTMPL": "74200.00",
+                                            "Name": "jyz003",
+                                            "No": 1,
+                                            "OpenDate": "20231013",
+                                            "OpenPrice": "653.200",
+                                            "Vol": "2"
+                                        }],
+                                        "TopInfo": 0
+                                    },
+                                    {
+                                        "Info": [
+                                            {
+                                                "CloseDate": "20231018",
+                                                "ClosePrice": "690.300",
+                                                "Contract": "原油2311",
+                                                "ContractName": "",
+                                                "Currency": "",
+                                                "ExchangeNo": "能源",
+                                                "MTMPL": "-5400.00",
+                                                "Name": "jyz003",
+                                                "No": 1,
+                                                "OpenDate": "20231018",
+                                                "OpenPrice": "693.000",
+                                                "Vol": "2"
+                                            }
+                                        ],
+                                        "TopInfo": 1
+                                    },
+                                    {
+                                        "Info": [
+                                            {
+                                                "CloseDate": "20231023",
+                                                "ClosePrice": "65960.000",
+                                                "Contract": "沪铜2311",
+                                                "ContractName": "",
+                                                "Currency": "",
+                                                "ExchangeNo": "上海",
+                                                "MTMPL": "1800.00",
+                                                "Name": "jyz003",
+                                                "No": 1,
+                                                "OpenDate": "20231019",
+                                                "OpenPrice": "66320.000",
+                                                "Vol": "1"
+                                            }
+                                        ],
+                                        "TopInfo": 2
+                                    },
+                                    {
+                                        "Info": [
+                                            {
+                                                "CloseDate": "20231018",
+                                                "ClosePrice": "5849.000",
+                                                "Contract": "沪银2312",
+                                                "ContractName": "",
+                                                "Currency": "",
+                                                "ExchangeNo": "上海",
+                                                "MTMPL": "-2085.00",
+                                                "Name": "jyz003",
+                                                "No": 1,
+                                                "OpenDate": "20231013",
+                                                "OpenPrice": "5710.000",
+                                                "Vol": "1"
+                                            }
+                                        ],
+                                        "TopInfo": 3
+                                    }
+                                ]
+                            },
+                            "VarityPLInfo": {
+                                "Total": [
+                                    {
+                                        "Detail": [
+                                            {
+                                                "Date": "20231018",
+                                                "PL": 68800,
+                                                "TotalPL": 68800
+                                            }
+                                        ],
+                                        "PL": 68800,
+                                        "Varity": "原油"
+                                    }
+                                ]
+                            }
+                        } ,
+                        "IndexSE": 0
+                    },
+                    "ShowUserName": "00000jyz003(文华模拟)",
+                    "UserName": "jyz003"
+                }
+            ],
+            "UserType": 0
+        }
+    ]
+}

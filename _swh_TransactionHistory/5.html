@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>期货账户分析网站</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script type="text/javascript" src="./static/js/数据结构.js"></script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <ul id="index-nav">
+            <li><img src="./static/image/logoo.jpg" width="80px" /></li>
+            <li><a href="">账户分析</a></li>
+            <li><a href="">交易统计</a></li>
+            <li><a href="">平仓记录</a></li>
+            <li><a href="1.html">期末持仓</a></li>
+            <li><a href="">成交记录</a></li>
+            <button type="submit">账户</button>
+            <input type="text" placeholder="" name="search">
+        </ul>
+    </div>
+
+    <section>
+        <h2>成交记录</h2>
+        <div id="tableContainer">
+            <!-- 日期按钮和表格将在这里动态生成 -->
+        </div>
+    </section>
+
+    <footer>
+        <p>版权所有 &copy; 2024</p>
+    </footer>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            // 创建表格
+            var table = document.createElement('table');
+            table.className = 'table';
+
+            // 创建表头
+            var thead = document.createElement('thead');
+            var headerRow = document.createElement('tr');
+            var headers = ["日期", "交易所", "合约", "买卖", "开平", "手数", "成交价", "成交额", "平仓盈亏", "手续费", "投保", "权利金收支"];
+            headers.forEach(function (headerText) {
+                var header = document.createElement('th');
+                header.textContent = headerText;
+                headerRow.appendChild(header);
+            });
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+            // 创建表体并填充数据
+            var tbody = document.createElement('tbody');
+            table.appendChild(tbody); // 在这里添加tbody到table中
+
+            // 遍历DATA对象中的Total数组
+            DATA.Users[0].Info[0].Data.CFUser.MatchRecord.Total.forEach(function (total) {
+                var array = total.Array;
+                var date = total.date; // 从total对象中获取date属性
+
+                array.forEach(function (item) {
+                    var row = document.createElement('tr');
+                    // 添加数据到表格行
+                    row.innerHTML = `
+                <td>${date}</td> <!-- 从total对象中获取date -->
+                <td>${item.ExchangeNo}</td>
+                <td>${item.Contract}</td>
+                <td>${item.BidAsk}</td>
+                <td>${item.Offset}</td>
+                <td>${item.Vol}</td>
+                <td>${item.Price}</td>
+                <td>${item.Turnover}</td>
+                <td>${item.MTMPL}</td>
+                <td>${item.Fee}</td>
+                <td>${item.Hedge}</td>
+                <td>${item.PremiumIO}</td>
+            `;
+                    tbody.appendChild(row);
+                });
+            });
+
+            // 将表格添加到容器中
+            var tableContainer = document.getElementById('tableContainer');
+            tableContainer.appendChild(table);
+        });
+
+    </script>
+</body>
+
+</html>
