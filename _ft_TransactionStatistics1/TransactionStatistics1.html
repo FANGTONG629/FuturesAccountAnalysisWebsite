@@ -1,0 +1,397 @@
+<!--TransactionStatistics-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Transaction Statistics</title>
+    <script type="text/javascript" src="./数据结构.js"></script>
+    <style id="head">
+        ul
+        {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            overflow: hidden;
+            border: 1px solid #ffffff;
+            background-color: #080144;
+        }
+        li
+        {
+            float: left;
+        }
+        li a {
+        display: block;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 10px;
+        padding: 10px 16px;
+        font-size: 18px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+          background-color: #bebebe;
+      }
+
+      .active {
+          background-color: #4CAF50;
+      }
+      .nav input[type=text] {
+        float: right;
+        padding: 6px;
+        margin-top: 16px;
+        margin-right: 16px;
+        border: none;
+        font-size: 17px;
+      }
+      .nav button {
+        float: right;
+        padding: 6px;
+        margin-top: 16px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+    <style id="body">
+        body{
+            background-color: #EBF7F4;
+        }
+        .TS_top5 {
+            float:left;
+            margin:15px; padding:0px;
+            width:1650px;
+            height: 500px;
+            align-items: center;
+            background-color:white;
+            border:1px solid #B9D6CF;
+            border-radius:3px;
+            clear: both;
+
+        }
+        p.p_title {margin:2px;margin-left: 7px; padding:2px;font-size:12px;border-bottom: 1.5px dotted #B9D6CF;width: 98%;}
+        .top5_div{
+            margin:6px; padding: 3px;
+            float:left;
+            width:48%;
+            height: 43.5%;
+            /*
+            border:1px solid #B9D6CF;
+            border-radius:3px;
+            */
+            min-width:260px;
+            
+        }
+        .top5_div table{
+            font-size:12px;
+            text-align:center;
+            width: 100%;
+        }
+        .top5_div table td,th{
+            width: 20%;
+            height: 25px;
+        }
+        .top5_div table th{
+            background-color: #B9D6CF;
+        }
+        .ts_top5_div2{
+            margin:15px; padding: 3px;
+            float:left;
+            width:97%;
+            height: 80%;
+            border:1px solid #B9D6CF;
+            border-radius:3px;
+            min-width:260px;
+
+        }
+        .TS_top5_2 {
+            float:left;
+            margin:15px; padding:0px;
+            width:1650px;
+            height: 250px;
+            align-items: center;
+            background-color:white;
+            border:1px solid #B9D6CF;
+            border-radius:3px;
+            clear: both;
+
+        }
+       .TS_container{
+            float:left;
+            margin:15px; padding:0px;
+            width:1650px;
+            height: 100%;
+            align-items: center;
+            background-color:white;
+            border:1px solid #B9D6CF;
+            border-radius:3px;
+            clear: both;
+       }
+       .TS_container table{
+            font-size:12px;
+            text-align:center;
+            width: 100%;
+        }
+        .TS_container table td,th{
+            width: 7.5%;
+            height: 25px;
+        }
+        .TS_container table th{
+            background-color: #B9D6CF;
+        }
+        button{
+            margin:0px; padding:0px;
+            border: none;
+            background-color:white;
+        }
+        button:hover{
+            background-color: #EBF7F4;
+            transition-duration: 0.3s;
+        }
+        button:active
+        {
+            background-color: #B9D6CF;
+        }
+        
+        svg line{
+          stroke: #B9D6CF;
+          stroke-width: 1px;
+        }
+        svg text{
+          font-family: "Arial";
+          font-size: 12px ;
+          fill: #535353;
+          text-anchor: end;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav">
+      <ul id="index-nav">
+          <li><img src="./TITLE//2.jpg" width=80px /></li>
+          <li><a href="">账户分析</a></li>
+          <li><a href="./TransactionStatistics1.html">交易统计</a></li>
+          <li><a href="">平仓记录</a></li>
+          <li><a href="">期末持仓</a></li>
+          <li><a href="">成交记录</a></li> 
+          <button type="submit">账户</button>
+          <input type="text" placeholder="" name="search">
+      </ul>
+    <div class="main_">
+        <div class="TS_top5">
+            <p class="p_title">交易TOP5信息</p>
+            <div class="top5_div" id="0"><!--多头盈利TO5-->
+                <p style="margin:0px; padding:0px;font-size:11px;">多头盈利TO5</p>
+                <script>TS_TOP5_table(0)</script>
+                <!--<table>
+                    <thead>
+                      <tr>
+                        <th>编号</th>
+                        <th>账号</th>
+                        <th>合约</th>
+                        <th>手数</th>
+                        <th>盈亏</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                      </tr>
+                    </tbody>
+                </table>-->
+            </div>
+            <div class="top5_div" id="1"><!--多头亏损TO5-->
+                <p style="margin:0px; padding:0px;font-size:11px;">多头亏损TO5</p>
+                <script>TS_TOP5_table(1)</script>
+                <!--<table>
+                    <thead>
+                      <tr>
+                        <th>编号</th>
+                        <th>账号</th>
+                        <th>合约</th>
+                        <th>手数</th>
+                        <th>盈亏</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                      </tr>
+                    </tbody>
+                </table>-->
+            </div>
+            <div class="top5_div" id="2"><!--单头盈利TO5-->
+                <p style="margin:0px; padding:0px;font-size:11px;">单头盈利TO5</p>
+                <script>TS_TOP5_table(2)</script>
+                <!--<table>
+                    <thead>
+                      <tr>
+                        <th>编号</th>
+                        <th>账号</th>
+                        <th>合约</th>
+                        <th>手数</th>
+                        <th>盈亏</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                      </tr>
+                    </tbody>
+                </table>-->
+            </div>
+            <div class="top5_div" id="3"><!--单头亏损TO5-->
+                <p style="margin:0px; padding:0px;font-size:11px;">单头亏损TO5</p>
+                <script>TS_TOP5_table(3)</script>
+                <!--<table>
+                    <thead>
+                      <tr>
+                        <th>编号</th>
+                        <th>账号</th>
+                        <th>合约</th>
+                        <th>手数</th>
+                        <th>盈亏</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                        <td>填我！</td>
+                      </tr>
+                    </tbody>
+                </table>-->
+            </div>
+        </div>
+        <div class="TS_top5_2">
+            <p class="p_title">品种盈亏</p>
+            <div class="ts_top5_div2">
+              <svg id="mySVG1" width=1300 height=190 xmlns="http://www.w3.org/2000/svg" version="1.1">
+                <text x="220" y="18">总览</text>
+                <line x1="200" y1="25" x2="1300" y2="25" stroke-dasharray="3"/>
+                <text x="198" y="29">200,000</text>
+                <line x1="200" y1="50" x2="1300" y2="50" />
+                <text x="198" y="54">0</text>
+                <line x1="200" y1="75" x2="1300" y2="75" stroke-dasharray="3"/>
+                <text x="198" y="79">-200,000</text>
+                <line x1="200" y1="100" x2="1300" y2="100" stroke-dasharray="3"/>
+                <text x="198" y="104">-400,000</text>
+                <line x1="200" y1="125" x2="1300" y2="125" stroke-dasharray="3"/>
+                <text x="198" y="129">-600,000</text>
+                <line x1="200" y1="150" x2="1300" y2="150" stroke-dasharray="3"/>
+                <text x="198" y="154">-800,000</text>
+                <line x1="200" y1="25" x2="200" y2="150" />
+                <script>histogram_of_profit()</script>
+              </svg>
+            </div>
+        </div>
+        <div class="TS_container" id="ts_container">
+            <p class="p_title">交易统计</p>
+            <!--<table id="--TransactionStatistics--">
+                <thead>
+                    <tr>
+                        <th>交易所</th>
+                        <th>品种/合约</th>
+                        <th>多空</th>
+                        <th>手数</th>
+                        <th>交易次数</th>
+                        <th>盈利次数</th>
+                        <th>亏损次数</th>
+                        <th>最大盈利</th>
+                        <th>最大亏损</th>
+                        <th>盈亏</th>
+                        <th>平均盈亏(单次)</th>
+                        <th>平均盈亏(每手)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td><button type="button">&#8744</button></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td>填我！</td>
+                      <td><button type="button">&#8744</button></td>
+                    </tr>
+                  </tbody>
+            </table>-->
+            <script>TrasactionStatistics()</script>
+        </div>
+    </div>
+    <!--<div>
+      <script >
+        document.write(Date());
+      </script>
+    </div>-->
+</body>
+</html>
